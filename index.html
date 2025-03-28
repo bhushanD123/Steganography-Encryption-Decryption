@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Steganography Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center mb-8 text-blue-600">Image Steganography Tool</h1>
+        
+        <div class="flex justify-center mb-8">
+            <button id="encryptTab" class="tab-btn px-6 py-2 bg-blue-500 text-white rounded-l-lg focus:outline-none">Encrypt</button>
+            <button id="decryptTab" class="tab-btn px-6 py-2 bg-gray-300 rounded-r-lg focus:outline-none">Decrypt</button>
+        </div>
+
+        <div id="encryptContent" class="tab-content active bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Hide Message in Image</h2>
+            <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Select Image:</label>
+                <input type="file" id="encryptImage" accept="image/*" class="w-full p-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Secret Message:</label>
+                <textarea id="secretMessage" rows="4" class="w-full p-2 border rounded" placeholder="Enter your secret message..."></textarea>
+            </div>
+            <button id="encryptBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                <i class="fas fa-lock mr-2"></i>Encrypt & Download
+            </button>
+            <div id="encryptPreview" class="mt-4"></div>
+        </div>
+
+        <div id="decryptContent" class="tab-content bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Extract Message from Image</h2>
+            <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Select Image:</label>
+                <input type="file" id="decryptImage" accept="image/*" class="w-full p-2 border rounded">
+            </div>
+            <button id="decryptBtn" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
+                <i class="fas fa-unlock mr-2"></i>Extract Message
+            </button>
+            <div id="extractedMessage" class="mt-4 p-4 bg-gray-100 rounded hidden">
+                <h3 class="font-semibold mb-2">Extracted Message:</h3>
+                <p id="messageOutput" class="whitespace-pre-wrap"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

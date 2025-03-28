@@ -1,0 +1,44 @@
+/* Additional styling for the steganography app */
+.tab-btn {
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    transform: translateY(-2px);
+}
+
+#encryptBtn, #decryptBtn {
+    transition: all 0.3s ease;
+}
+
+#encryptBtn:hover, #decryptBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#secretMessage, #encryptImage, #decryptImage {
+    transition: all 0.3s ease;
+    border: 1px solid #d1d5db;
+}
+
+#secretMessage:focus, #encryptImage:focus, #decryptImage:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    outline: none;
+}
+
+#extractedMessage {
+    transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
